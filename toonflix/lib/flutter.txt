@@ -1,0 +1,116 @@
+/* 다운로드 방법. */
+ 1. https://docs.flutter.dev/get-started/install/windows
+    에서 SDK 다운로드
+
+ 2. C:\src\flutter 로 압출풀기
+
+ 3. C:\src\flutter\bin 환경변수
+    시스템 환경 변수 변집 > 환경변수
+    Path 편집 
+    새로만들기 > C:\src\flutter\bin > 확인.
+
+ 4. 명령 프롬프트(cmd) 창에서
+    C:\src\flutter 경로로 이동 후 
+    flutter doctor 입력
+
+ 5. 안드로이드 설정 
+   안드로이드 스튜디오 설치.
+
+ 6. 환경변수 등록 
+    ANDROID_HOME
+    C:\Users\HeoJH\AppData\Local\Android\Sdk
+    안드로이드 스튜디오 > file > Project Structure > SDK Location
+    안드로이드 스튜디오 > file > Settings > System Settings > Android SDK
+    SDK Tools > Android SDK Command-line Tools (lastest) 다운로드
+
+ 7. 만들고자 하는 폴더에서 
+    flutter create <folder name>
+
+ 8. flutter doctor --android-licenses
+    y,y,y,y,y,,,,
+
+ 9. 비주얼 스튜디오 설치,,
+    https://visualstudio.microsoft.com/ko/downloads/
+
+ 10. [!] Android Studio (version 2022.1) X Unable to find bundled Java version.
+    D:\Program\Android\Android Studio\jbr 의 내용을 그대로  
+    D:\Program\Android\Android Studio\jre 아래 복사 
+
+ 11. [X] Windows Version (Unable to confirm if installed Windows version is 10 or greater)
+    flutter channel master
+    언어 환경문제
+
+ 12. Visual Studio is missing necessary components. Please re-run the Visual Studio installer for the "Desktop development with C++" workload, and include these components
+    Visual Studio Installer 실행 > 수정 > 
+    C++를 사용한 데스크톱 개발, C++를 사용한 모바일 개발 체크 
+    수정
+    vscode에서 flutter pub upgrade 팝업 뜨면 업그레이드.
+
+/* 강의  */
+ 1. widget을 레고 블록이라 생각.
+    flutter 관점에서 Widget은 앱의 rUI를 만드는 레고 블럭 같은것.
+    develop 관점에서 Widget은 Class를 만드는 것.
+    https://docs.flutter.dev/development/ui/widgets
+    제공되는 위젯이 많아 사용하고 싶은 위젯을 사용한다.
+
+ 2. 파란줄 없애기.
+    톱니바퀴 클릭 
+    > open user settings 검색
+    > settings.json 파일 열기
+    > "editor.codeActionsOnSave": { "souce.fixAll": true }, 추가 입력
+
+ 3. 부모의 가이드 라인 생성.
+    > "dart.previewFlutterUiGuides": true,
+ 
+ 4. 감싸는 단축키 Cntl + . >> [Code Action]
+
+ 5. Extension: Error Lens 다운.
+    > 에러가 뭔지 알려줌.
+
+ 6. setState()
+    > 상태가 변경되는 위젯을 StatefulWidget 이고,
+    > setState(() {})  을 이용하여 화면의 상태 변화를 시킨다. 
+    > 꼭 {} 안에서 처리를 할 필요는 없고, 함수가 호출만 되면 상태변화가 된다.
+
+ 7. theme
+    > ThemeData와 TextTheme를 이용하여 한번에 스타일 속성을 정의할 수 있다.
+
+ 8. BuildContext의 위젯트리에 대한 내용을 가지고 있다. 
+    > BuildContext는 위젯트리에서 위젯의 위치를 제공하고, 이를 통해 상위 요소 데이터에 접근할 수 있다.
+    > (7)에서 정의한 Theme를 가져올 때는 아래와 같이 사용된다.
+      - ex) Theme.of(context).textTheme.titleLarge?.color, (존재하면 사용)
+      - ex) Theme.of(context).textTheme.titleLarge!.color, (무조건 존재)
+
+ 9. Widget Life Cycle
+   > initState()
+     - build 메서드보다 먼저 호출 됨. 오직 단 한번만 호출 됨.
+     - 해당 클래스(컴포넌트)가 노출되기 전에!
+     - 부모 상태에 따른 초기화를 해야 할 때 사용됨.
+     - API 업데이트.
+     - super.initState() 호출 해야 됨.
+   > build()
+     - 해당 클래스(컴포넌트)가 노출될 때!
+     - UI를 생성.
+   > dispose()
+     - 위젯이 스크린에서 제거될 때 호출되는 메소드.
+     - 해당 클래스(컴포넌트)가 제거될 때!
+     - 이벤트 리스너 같은 것들을 구독 취소!
+
+/* 웹툰 */
+   1. 패키지 다운로드 페이지 
+      - https://pub.dev/packages/http
+      - pubspec.yaml 에서 dependencies 추가 
+      - 또는 flutter pub add http 아니면 dart pub add http 명령어로 추가.
+
+   2. 플루터 Document
+      - https://docs.flutter.dev/cookbook/animation/page-route-animation
+   
+   3. 페이지 이동 다운로드 페이지.
+      - https://pub.dev/packages/url_launcher
+      - ios, aos 마다 다르게 받아야 함.
+      - ios: ios > Runner > info.plist
+      - aos: android > app > src > main > AndroidManifest.xml
+
+   4. 핸드폰 저장소 다운로드 페이지
+      - https://pub.dev/packages/shared_preferences
+      

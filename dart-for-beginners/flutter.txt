@@ -1,0 +1,52 @@
+다운로드 방법.
+ 1. https://docs.flutter.dev/get-started/install/windows
+    에서 SDK 다운로드
+
+ 2. C:\src\flutter 로 압출풀기
+
+ 3. C:\src\flutter\bin 환경변수
+    시스템 환경 변수 변집 > 환경변수
+    Path 편집 
+    새로만들기 > C:\src\flutter\bin > 확인.
+
+ 4. 명령 프롬프트(cmd) 창에서
+    C:\src\flutter 경로로 이동 후 
+    flutter doctor 입력
+
+ 5. 안드로이드 설정 
+   안드로이드 스튜디오 설치.
+
+ 6. 환경변수 등록 
+    ANDROID_HOME
+    C:\Users\HeoJH\AppData\Local\Android\Sdk
+    안드로이드 스튜디오 > file > Project Structure > SDK Location
+    안드로이드 스튜디오 > file > Settings > System Settings > Android SDK
+    SDK Tools > Android SDK Command-line Tools (lastest) 다운로드
+
+ 7. 만들고자 하는 폴더에서 
+    flutter create <folder name>
+
+ 8. flutter doctor --android-licenses
+    y,y,y,y,y,,,,
+
+ 9. 비주얼 스튜디오 설치,,
+    https://visualstudio.microsoft.com/ko/downloads/
+
+10. [!] Android Studio (version 2022.1) X Unable to find bundled Java version.
+    D:\Program\Android\Android Studio\jbr 의 내용을 그대로  
+    D:\Program\Android\Android Studio\jre 아래 복사 
+
+11. [X] Windows Version (Unable to confirm if installed Windows version is 10 or greater)
+    flutter channel master
+    언어 환경문제
+
+12. Visual Studio is missing necessary components. Please re-run the Visual Studio installer for the "Desktop development with C++" workload, and include these components
+    Visual Studio Installer 실행 > 수정 > 
+    C++를 사용한 데스크톱 개발, C++를 사용한 모바일 개발 체크 
+    수정
+    vscode에서 flutter pub upgrade 팝업 뜨면 업그레이드.
+
+13. widget을 레고 블록이라 생각.
+    쌓아 올려서 앱을 만들지
+    https://docs.flutter.dev/development/ui/widgets
+    제공되는 위젯이 많다.
